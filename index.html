@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshEggs Supply & Distribution — fresh quality eggs supplied from Agodi, Ibadan, Oyo State across Nigeria.">
+  <title>FreshEggs Supply & Distribution | Fresh Eggs Delivered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#075c3c;--green2:#0b7a4f;--lime:#78c947;--gold:#ffb900;--cream:#fffaf0;--ink:#12352a;--white:#fff}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;font-family:"DM Sans",Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .topbar{background:var(--green);color:#fff;text-align:center;padding:9px 16px;font-weight:700;font-size:14px}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 2px 18px #00000012}
+    .nav{max-width:1180px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--green)}
+    .brand-mark{width:48px;height:48px;border:3px solid var(--green);border-radius:50%;display:grid;place-items:center;font-size:25px;background:#f7fff5}
+    .brand span{display:block}.brand strong{font-size:21px}.brand small{font-size:11px;letter-spacing:2px;color:#777}
+    nav{display:flex;gap:25px;font-weight:700;font-size:14px}nav a:hover{color:var(--green2)}
+    .order-btn{background:var(--green);color:#fff;padding:12px 18px;border-radius:30px;font-weight:800;box-shadow:0 7px 18px #075c3c2e}
+    .order-btn:hover{background:#043e29;transform:translateY(-1px)}
+    .hero{max-width:1180px;margin:25px auto 0;padding:0 20px}
+    .hero-card{overflow:hidden;border-radius:28px;position:relative;background:var(--green);box-shadow:0 20px 45px #0002}
+    .hero-card img{display:block;width:100%;height:auto;min-height:480px;object-fit:cover}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,48,31,.82) 0%,rgba(3,48,31,.45) 40%,rgba(3,48,31,.05) 72%)}
+    .hero-copy{position:absolute;left:6%;top:15%;max-width:500px;color:#fff}
+    .eyebrow{display:inline-block;background:var(--gold);color:#153b2a;padding:7px 13px;border-radius:20px;font-weight:800;font-size:13px}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(43px,6vw,76px);line-height:.98;margin:18px 0 18px}
+    h1 em{color:#ffe16a;font-style:normal}.hero-copy p{font-size:18px;max-width:470px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:30px;font-weight:800;border:2px solid transparent}
+    .btn.gold{background:var(--gold);color:#153b2a}.btn.light{background:#fff;color:var(--green)}
+    .strip{max-width:1100px;margin:-25px auto 0;position:relative;z-index:3;background:#fff;border-radius:20px;padding:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;box-shadow:0 12px 35px #0002}
+    .benefit{text-align:center;font-weight:800;font-size:14px}.benefit b{display:block;font-size:25px;margin-bottom:3px}
+    section{max-width:1180px;margin:80px auto;padding:0 20px}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 35px}.section-head h2{font-family:"Playfair Display",serif;font-size:45px;margin:0 0 8px;color:var(--green)}
+    .section-head p{color:#5f6e67}
+    .products{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+    .product{background:#fff;border-radius:25px;overflow:hidden;box-shadow:0 10px 30px #00000012;border:2px solid #e8eadf}
+    .product-img{height:230px;overflow:hidden}.product-img img{width:100%;height:100%;object-fit:cover;object-position:center 54%}
+    .product-body{padding:24px}.tag{display:inline-block;background:#eaf8df;color:var(--green);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:800}
+    .product h3{font-size:26px;margin:12px 0 3px}.price{font-size:38px;font-weight:900;color:var(--green);margin:0}.price small{font-size:14px;color:#777;font-weight:600}
+    .product-body p{color:#68736e}.product .btn{width:100%;margin-top:10px}
+    .about{background:var(--green);color:#fff;border-radius:30px;padding:45px;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+    .about h2{font-family:"Playfair Display",serif;font-size:45px;margin:0 0 15px}.about p{color:#e2f2ea}
+    .points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}.point{background:#ffffff12;border:1px solid #ffffff25;padding:14px;border-radius:15px;font-weight:700}
+    .location{background:#fff;border-radius:25px;padding:30px;color:var(--ink);box-shadow:0 10px 25px #0002}.location h3{margin-top:0;color:var(--green)}
+    .cta{background:linear-gradient(135deg,var(--gold),#ffd75e);border-radius:30px;padding:42px;text-align:center}.cta h2{font-family:"Playfair Display",serif;font-size:45px;margin:0 0 10px;color:#17452f}.cta p{font-size:18px}
+    footer{background:#043e29;color:#fff;padding:35px 20px;text-align:center}.footer-brand{font-size:22px;font-weight:900}.footer-note{opacity:.75;font-size:13px}
+    .float-wa{position:fixed;right:18px;bottom:18px;z-index:50;background:#20c76a;color:#fff;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:29px;box-shadow:0 10px 25px #0004}
+    @media(max-width:800px){
+      nav{display:none}.hero-card img{min-height:620px;object-position:62% center}.hero-copy{left:7%;right:7%;top:9%}.hero-overlay{background:linear-gradient(90deg,rgba(3,48,31,.85),rgba(3,48,31,.5))}
+      .strip{grid-template-columns:repeat(2,1fr);margin:12px 20px 0}.products,.about{grid-template-columns:1fr}.about{padding:30px}.points{grid-template-columns:1fr}
+      section{margin:60px auto}.section-head h2,.about h2,.cta h2{font-size:36px}
+    }
+    @media(max-width:500px){.brand small{display:none}.brand strong{font-size:17px}.nav{padding:10px 14px}.order-btn{padding:10px 13px;font-size:13px}.hero{padding:0 10px}.hero-card{border-radius:20px}.hero-copy{top:7%}h1{font-size:43px}.hero-copy p{font-size:15px}.hero-actions .btn{width:100%}.strip{margin-left:10px;margin-right:10px;padding:14px}.benefit{font-size:12px}.product-img{height:200px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">🥚 Fresh eggs • Reliable supply • Delivery available across Nigeria</div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#home">
+        <div class="brand-mark">🥚</div>
+        <div><span><strong>FreshEggs</strong> Supply & Distribution</span><small>HEALTHY EGGS • BETTER LIVING</small></div>
+      </a>
+      <nav><a href="#home">Home</a><a href="#products">Products</a><a href="#why">Why Us</a><a href="#contact">Contact</a></nav>
+      <a class="order-btn" href="https://wa.me/2349167452777?text=Hello%20FreshEggs%20Supply%2C%20I%20want%20to%20place%20an%20egg%20order." target="_blank" rel="noopener">💬 Order Now</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <div class="hero">
+      <div class="hero-card">
+        <img src="assets/fresheggs-farm-and-eggs.png" alt="Fresh eggs in crates and a truck loading eggs at a poultry farm">
+        <div class="hero-overlay"></div>
+        <div class="hero-copy">
+          <span class="eyebrow">FROM OUR FARM TO YOUR TABLE</span>
+          <h1>Fresh & Nutritious <em>Eggs</em> for a Healthier You</h1>
+          <p>Quality eggs, carefully handled and supplied for homes, restaurants, shops, hotels and businesses.</p>
+          <div class="hero-actions">
+            <a class="btn gold" href="https://wa.me/2349167452777?text=Hello%20FreshEggs%20Supply%2C%20I%20want%20to%20place%20an%20egg%20order." target="_blank" rel="noopener">💬 Buy Now on WhatsApp</a>
+            <a class="btn light" href="#products">View Prices</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip">
+      <div class="benefit"><b>🌿</b>Fresh & Quality</div>
+      <div class="benefit"><b>🛡️</b>Clean & Hygienic</div>
+      <div class="benefit"><b>🚚</b>Fast & Reliable</div>
+      <div class="benefit"><b>🇳🇬</b>Supply Across Nigeria</div>
+    </div>
+
+    <section id="products">
+      <div class="section-head">
+        <h2>Our Egg Products</h2>
+        <p>Choose your preferred size and place your order directly through WhatsApp. Prices are per crate.</p>
+      </div>
+      <div class="products">
+        <article class="product">
+          <div class="product-img"><img src="assets/fresheggs-farm-and-eggs.png" alt="Jumbo size eggs in crates"></div>
+          <div class="product-body">
+            <span class="tag">BEST VALUE</span>
+            <h3>Jumbo Size Eggs</h3>
+            <p class="price">₦4,500 <small>/ crate</small></p>
+            <p>Large, fresh eggs — ideal for families, restaurants, hotels and bulk buyers.</p>
+            <a class="btn gold" href="https://wa.me/2349167452777?text=Hello%20FreshEggs%20Supply%2C%20I%20want%20to%20order%20Jumbo%20size%20eggs%20at%20%E2%82%A64%2C500%20per%20crate." target="_blank" rel="noopener">🥚 Order Jumbo — ₦4,500</a>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-img"><img src="assets/fresheggs-farm-and-eggs.png" alt="Medium size eggs in crates"></div>
+          <div class="product-body">
+            <span class="tag">AFFORDABLE</span>
+            <h3>Medium Size Eggs</h3>
+            <p class="price">₦4,000 <small>/ crate</small></p>
+            <p>Fresh, nutritious and affordable eggs for everyday cooking and business supply.</p>
+            <a class="btn gold" href="https://wa.me/2349167452777?text=Hello%20FreshEggs%20Supply%2C%20I%20want%20to%20order%20Medium%20size%20eggs%20at%20%E2%82%A64%2C000%20per%20crate." target="_blank" rel="noopener">🥚 Order Medium — ₦4,000</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="about">
+        <div>
+          <h2>Fresh Eggs. Better Business.</h2>
+          <p>We supply quality eggs from Agodi, Ibadan, Oyo State to customers and businesses across Nigeria. Whether you need one crate or regular bulk supply, contact us for your order.</p>
+          <div class="points">
+            <div class="point">✓ Fresh & carefully handled</div>
+            <div class="point">✓ Competitive prices</div>
+            <div class="point">✓ Reliable supply</div>
+            <div class="point">✓ Delivery available</div>
+          </div>
+        </div>
+        <div class="location">
+          <h3>📍 Our Location</h3>
+          <p><strong>Agodi, Ibadan, Oyo State, Nigeria</strong></p>
+          <p>We serve customers across Nigeria. Message us on WhatsApp to confirm delivery options and place your order.</p>
+          <a class="btn gold" href="https://wa.me/2349167452777?text=Hello%20FreshEggs%20Supply%2C%20please%20tell%20me%20about%20delivery%20to%20my%20location." target="_blank" rel="noopener">Ask About Delivery</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="cta">
+        <h2>Ready to Buy Fresh Eggs?</h2>
+        <p>Place your order or make an enquiry directly on WhatsApp.</p>
+        <a class="btn" style="background:var(--green);color:#fff" href="https://wa.me/2349167452777?text=Hello%20FreshEggs%20Supply%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener">💬 WhatsApp: 09167452777</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">🥚 FreshEggs Supply & Distribution</div>
+    <div>Agodi, Ibadan, Oyo State • WhatsApp 09167452777</div>
+    <div class="footer-note">© 2026 FreshEggs Supply & Distribution. Fresh eggs, reliable supply.</div>
+  </footer>
+
+  <a class="float-wa" href="https://wa.me/2349167452777?text=Hello%20FreshEggs%20Supply%2C%20I%20want%20to%20place%20an%20egg%20order." target="_blank" rel="noopener" aria-label="Order on WhatsApp">💬</a>
+</body>
+</html>
